@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Things I Love About You</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/jpg" href="img/bubu.jpg" />
+  </head>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.style.fontSize = "24px";
+      heart.style.opacity = "1";
+      heart.style.pointerEvents = "none";
+      heart.style.transition = "all 1s ease-out";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.top = e.clientY - 100 + "px";
+        heart.style.opacity = "0";
+      }, 0);
+
+      setTimeout(() => heart.remove(), 1000);
+    });
+  </script>
+
+  <!-- Bottom Left Image -->
+  <img
+    src="img/dudu4.gif"
+    alt="Cute Left"
+    class="hidden md:block fixed bottom-4 left-4 w-32 md:w-40 lg:w-52 select-none pointer-events-none z-40"
+  />
+
+  <!-- Bottom Right Image -->
+  <img
+    src="img/dudu3.gif"
+    alt="Cute Right"
+    class="hidden md:block fixed bottom-4 right-4 w-32 md:w-40 lg:w-52 select-none pointer-events-none z-40"
+  />
+
+  <body class="bg-pink-50 text-gray-800 font-sans p-6">
+    <!-- 🩷 Navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 w-full bg-pink-50 px-6 py-7 z-50 flex justify-end space-x-4"
+    >
+      <a href="index.html" class="text-pink-600 font-semibold hover:underline"
+        >Home</a
+      >
+      <a
+        href="love-things.html"
+        class="text-pink-600 font-semibold hover:underline"
+        >Things I Love</a
+      >
+      <a href="gallery.html" class="text-pink-600 font-semibold hover:underline"
+        >Gallery</a
+      >
+      <a href="letter.html" class="text-pink-600 font-semibold hover:underline"
+        >Love Letter</a
+      >
+    </nav>
+
+    <h1
+      class="fixed top-16 left-0 right-0 w-full text-center text-2xl font-bold text-pink-600 bg-pink-50 py-4 z-40"
+    >
+      The Things I Love About You 💗
+    </h1>
+
+    <div class="pt-36 space-y-4 max-w-2xl mx-auto text-center">
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🌸 I love your voice — it's the most beautiful sound in the world.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🧸 I love how caring and thoughtful you are, even about the little
+        things.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        💖 I love how you make me feel safe, like I'm finally home.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🥰 I love the way you say "love" — it feels special every single time.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        📱 I love how even short messages from you can make my day so much
+        better.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🌙 I love how you're always patient with me, even when I overthink
+        things.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        💌 I love how you believe in us, in me, and in our future together.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🌈 I love how we can talk about anything and everything, or even just be
+        on the phone.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        ✨ I love how being with you feels like magic, every single time.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🍓 I love how you always find ways to make me smile — even on bad days.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        🥰 I love how we’re not perfect, but we’re perfect for each other.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        💍 I love dreaming about the future with you by my side.
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md text-left">
+        💖 And, I love you. Always have, always will.
+      </div>
+    </div>
+  </body>
+</html>

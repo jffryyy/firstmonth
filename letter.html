@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Letter</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/jpg" href="img/bubu.jpg" />
+    <link href="dist/output.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .dancing-script {
+        font-family: "Dancing Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.style.fontSize = "24px";
+      heart.style.opacity = "1";
+      heart.style.pointerEvents = "none";
+      heart.style.transition = "all 1s ease-out";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.top = e.clientY - 100 + "px";
+        heart.style.opacity = "0";
+      }, 0);
+
+      setTimeout(() => heart.remove(), 1000);
+    });
+  </script>
+
+  <body>
+    <!-- 🩷 Navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 w-full bg-pink-50 px-6 py-7 z-50 flex justify-end space-x-4"
+    >
+      <a href="index.html" class="text-pink-600 font-semibold hover:underline"
+        >Home</a
+      >
+      <a
+        href="love-things.html"
+        class="text-pink-600 font-semibold hover:underline"
+        >Things I Love</a
+      >
+      <a href="gallery.html" class="text-pink-600 font-semibold hover:underline"
+        >Gallery</a
+      >
+      <a href="letter.html" class="text-pink-600 font-semibold hover:underline"
+        >Love Letter</a
+      >
+    </nav>
+
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <p class="dancing-script text-xl text-gray-700 text-left mb-2">
+                <strong>Dear Judy,</strong>
+              </p>
+
+              <p
+                class="dancing-script leading-relaxed text-justify max-w-xl mx-auto text-gray-700"
+                style="font-size: 8px !important"
+              >
+                My love, every moment with you feels like magic. You brighten my
+                world and fill my heart. Thank you for the love and simply being
+                you. Happy first monthsary and to many more. I love you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="heart"></div>
+      </div>
+    </div>
+    <script>
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+    </script>
+  </body>
+</html>

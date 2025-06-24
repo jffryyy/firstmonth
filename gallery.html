@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gallery</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/jpg" href="img/bubu.jpg" />
+
+    <style>
+      .flip-card {
+        perspective: 1000px;
+      }
+
+      .flip-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      /* Flip on click: this class will be added with JavaScript */
+      .flip-card.flipped .flip-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-front,
+      .flip-back {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0.75rem;
+      }
+
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.style.fontSize = "24px";
+      heart.style.opacity = "1";
+      heart.style.pointerEvents = "none";
+      heart.style.transition = "all 1s ease-out";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.top = e.clientY - 100 + "px";
+        heart.style.opacity = "0";
+      }, 0);
+
+      setTimeout(() => heart.remove(), 1000);
+    });
+  </script>
+
+  <body class="bg-pink-50 text-gray-800 font-sans pt-32 px-6">
+    <!-- 🩷 Navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 w-full bg-pink-50 px-6 py-7 z-50 flex justify-end space-x-4"
+    >
+      <a href="index.html" class="text-pink-600 font-semibold hover:underline"
+        >Home</a
+      >
+      <a
+        href="love-things.html"
+        class="text-pink-600 font-semibold hover:underline"
+        >Things I Love</a
+      >
+      <a href="gallery.html" class="text-pink-600 font-semibold hover:underline"
+        >Gallery</a
+      >
+      <a href="letter.html" class="text-pink-600 font-semibold hover:underline"
+        >Love Letter</a
+      >
+    </nav>
+
+    <!-- 💖 Title -->
+    <h1 class="text-2xl font-bold text-pink-600 text-center mb-8">
+      Your Cutest Moments 💘
+    </h1>
+
+    <!-- 🖼️ Gallery Grid -->
+    <div
+      class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+    >
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute1.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Cutie naman ng bebe ko 🥰
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute2.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Ugh, my heart!💕
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute3.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              This smile is sooooooo cute 😚
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute4.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Kahit kabado to, go pa din. Cute mo talaga 🤭
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute5.jpg"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Sino ba tong cutie na sumisilip? 😍
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/cute6.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Matutulog na ang bebe ko? Sweet dreams my cutiepie 😘
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more photo blocks below -->
+    </div>
+
+    <!-- 💫 New Section Title -->
+    <h2 class="text-2xl font-bold text-pink-600 text-center mt-20 mb-8">
+      Pretty & Charming Shots 🌸
+    </h2>
+
+    <!-- 🖼️ Gallery Grid -->
+    <div
+      class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+    >
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty1.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Dahan-dahan lang sa pagiging maganda, di kayang habulin ng heart
+              ko. 🥰
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty2.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Going to school na sofer pretty! Ugh my bebe!💕
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty3.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              My wallpaper right now! You're so angelic! 😍
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty4.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Green may be the color of nature, but nothing looks more natural
+              and perfect than you in it. 🌱💚
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty5.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Who needs the sun when you’re already that bright, even your
+              shades can’t hide that glow. ☀️😎
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/pretty6.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Choosing just six from the 130+ gorgeous photos I have of you? The
+              hardest thing ever! 😫 You’re just too pretty in all of them. 😍
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💫 New Section Title -->
+    <h2 class="text-2xl font-bold text-pink-600 text-center mt-20 mb-8">
+      My Fav Bali Shots ✈️🏖
+    </h2>
+
+    <!-- 🖼️ Gallery Grid -->
+    <div
+      class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+    >
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali4.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              The sand may forget, but I won’t. That little gesture meant the
+              world to me. Thank you for loving me like this. ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali2.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Whether the sun was rising or falling, all I saw was you, and it
+              was the most beautiful view. 🌤️
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali1.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              You stood in the sunset like a quiet poem,full of warmth, mystery,
+              and love. 🥰
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali3.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              The ocean behind you was vast and beautiful… but my eyes never
+              left you. 😍
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali5.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Grace in every step, beauty in every frame. 🌸
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card w-full h-80 relative fade-in">
+        <div class="flip-inner w-full h-full shadow-lg rounded-xl">
+          <!-- Front -->
+          <div class="flip-front bg-white overflow-hidden">
+            <img
+              src="img/bali6.jfif"
+              alt="Her Smile"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Back -->
+          <div
+            class="flip-back bg-pink-100 flex items-center justify-center p-4"
+          >
+            <p class="text-pink-600 font-semibold text-center text-lg">
+              Surrounded by silence and stone… and still, you were the most
+              divine thing there. 😇
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📍 Footer or Note -->
+    <p class="text-center text-pink-500 mt-24 text-lg">
+      I can’t wait to fill this gallery with *us* someday. 🥺😊
+    </p>
+
+    <script>
+      const flipSound = new Audio("img/flip.mp3");
+
+      function showHearts(x, y) {
+        const heart = document.createElement("div");
+        heart.textContent = "😘";
+        heart.style.position = "fixed";
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+        heart.style.fontSize = "24px";
+        heart.style.opacity = "1";
+        heart.style.pointerEvents = "none";
+        heart.style.transition = "all 1s ease-out";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.style.top = y - 80 + "px";
+          heart.style.opacity = "0";
+        }, 0);
+
+        setTimeout(() => heart.remove(), 1000);
+      }
+
+      document.querySelectorAll(".flip-card").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          card.classList.toggle("flipped");
+          flipSound.currentTime = 0;
+          flipSound.play();
+          showHearts(e.clientX, e.clientY);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Monthsary</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/jpg" href="img/bubu.jpg" />
+  </head>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.style.fontSize = "24px";
+      heart.style.opacity = "1";
+      heart.style.pointerEvents = "none";
+      heart.style.transition = "all 1s ease-out";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.top = e.clientY - 100 + "px";
+        heart.style.opacity = "0";
+      }, 0);
+
+      setTimeout(() => heart.remove(), 1000);
+    });
+  </script>
+
+  <body
+    class="text-gray-800 font-sans"
+    style="
+      background: url('img/pink1.gif') no-repeat center center fixed;
+      background-size: cover;
+    "
+  >
+    <!-- 🩷 Navbar -->
+    <nav class="fixed top-4 right-4 px-4 py-2 space-x-4 z-50">
+      <a href="index.html" class="text-pink-600 font-semibold hover:underline"
+        >Home</a
+      >
+      <a
+        href="love-things.html"
+        class="text-pink-600 font-semibold hover:underline"
+        >Things I Love</a
+      >
+      <a href="gallery.html" class="text-pink-600 font-semibold hover:underline"
+        >Gallery</a
+      >
+      <a href="letter.html" class="text-pink-600 font-semibold hover:underline"
+        >Love Letter</a
+      >
+    </nav>
+
+    <!-- 🩷 Page Content -->
+    <div
+      class="min-h-screen flex flex-col justify-center items-center p-8 text-center"
+    >
+      <h1 class="text-4xl font-bold text-pink-600">
+        Happy Monthsary, Love! 💖
+      </h1>
+      <p class="mt-4 text-lg">I made this website just for you.🥰</p>
+    </div>
+
+    <img
+      src="img/bubu2.gif"
+      alt="Cute Decoration"
+      class="fixed bottom-4 right-4 w-48 md:w-56 lg:w-64 select-none pointer-events-none z-40"
+    />
+  </body>
+</html>
